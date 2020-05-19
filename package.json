@@ -1,0 +1,23 @@
+{
+  "name": "@betroll/module-kit",
+  "version": "0.0.2",
+  "description": "",
+  "bin": {
+    "module-kit-clean": "./clean.js"
+  },
+  "scripts": {
+    "123prepack": "npx tsc --noEmit false",
+    "123postpublish": "npm run clean",
+    "123clean": "ts-node ../../scripts/clean.ts"
+  },
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "del": "^5.1.0",
+    "lodash": "*"
+  }
+}
