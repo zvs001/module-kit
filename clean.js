@@ -7,9 +7,11 @@ const del = require('del')
 const deletedPaths = del.sync([
   './**/*.js',
   './**/*.d.ts',
+  './**/*.js.map',
   // '!scripts',
   '!typings',
   '!node_modules',
 ])
 
-console.log('Deleted files and directories:\n', deletedPaths.join('\n'), '\n\n')
+console.log('Deleted files and directories:\n')
+console.log(deletedPaths.join('\n'))

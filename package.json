@@ -1,5 +1,5 @@
 {
-  "name": "@zvs001/module-kit",
+  "name": "module-kit",
   "version": "0.0.1",
   "description": "",
   "private": false,
@@ -11,11 +11,21 @@
     "123postpublish": "npm run clean",
     "123clean": "ts-node ../../scripts/clean.ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "typescript",
+    "modules",
+    "library",
+    "lerna"
+  ],
+  "author": {
+    "name": "Vladislav Zaynchkovsky",
+    "email": "zvsx001@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/zvs001/module-kit"
+  },
   "dependencies": {
-    "del": "^5.1.0",
-    "lodash": "*"
+    "del": "^5.1.0"
   }
 }

@@ -1,8 +1,0 @@
-# extends is not working
-#extends: '.../.mocharc.js'
-
-require:
-  - '../registerBabel.js'
-  - 'ts-node/register'
-
-timeout: 10000
