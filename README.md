@@ -19,6 +19,17 @@ Remove files, excluding `index.js` and `cmd.js`
 module-kit-clean --exclude index.js cmd.js
 ```
 
+Default glob for deletion:
+```
+./**/*.js
+./**/*.d.ts
+./**/*.js.map
+!typings
+!node_modules
+!bin
+!_
+```
+
 ### Configs
 Add scripts to your library `package.json`:
 

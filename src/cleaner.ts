@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 // cmd module-kit-clean
 
 import del from 'del'
@@ -17,21 +18,26 @@ let listDefault = [
 
 async function clean(config: {
   excludeList: string[]
+  noDelete?: boolean
 }) {
-
-  const { excludeList = [] } = config || {}
+  const { excludeList = [], noDelete } = config || {}
 
   const list: string[] = [
     ...listDefault,
   ]
   excludeList.forEach(item => list.push(`!${item}`))
 
-  const pathsDeleting = await globby(excludeList)
+  let pathsDeleting: string[] = []
+  if (noDelete) {
+    pathsDeleting = await globby(list)
+  } else {
+    pathsDeleting = del.sync(list)
+  }
 
-  // const pathsDeleting = del.sync(excludeList)
-
+  if (!pathsDeleting.length) return null
   console.log('Deleted files and directories:')
-  console.log('-', pathsDeleting.join('\n - '))
+  console.log('-', pathsDeleting.join('\n- '))
+  console.log(`Total files deleted: ${pathsDeleting.length}`)
 }
 
 export default {

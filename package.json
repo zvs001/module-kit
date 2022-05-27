@@ -1,16 +1,16 @@
 {
   "name": "module-kit",
-  "version": "0.1.0-rc.0",
+  "version": "0.1.0-rc.2",
   "description": "",
   "private": false,
   "main": "index",
   "bin": {
-    "module-kit-clean": "bin/cmd.js"
+    "module-kit-clean": "./bin/cmd.js"
   },
   "scripts": {
     "prepack": "npx tsc --noEmit false",
     "postpublish": "npm run clean",
-    "clean": "bin/cmd.js --exclude ./bin/cmd.js"
+    "clean": "./bin/cmd.js --exclude ./bin/cmd.js"
   },
   "keywords": [
     "typescript",
@@ -32,6 +32,6 @@
     "yargs": "^17.5.1"
   },
   "devDependencies": {
-    "ts-node": "^10.4.0"
+    "ts-node": "^10.8.0"
   }
 }

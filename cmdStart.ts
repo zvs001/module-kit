@@ -4,6 +4,11 @@ import cleaner from './src/cleaner'
 
 function getArgs() {
   return yargs(hideBin(process.argv))
+    .option('list', {
+      alias: 'l',
+      type: 'boolean',
+      description: 'List files that will be deleted without deleting them.',
+    })
     .option('ignore', {
       alias: 'exclude',
       type: 'array',
@@ -13,14 +18,14 @@ function getArgs() {
     .argv
 }
 
-const cmdStart = () => {
+const cmdStart = async () => {
   const args = getArgs()
   // @ts-ignore
-  const { ignore } = args
-  // invariant(configPath, '--config path is invalid')
+  const { ignore, list } = args
 
-  cleaner.clean({
+  await cleaner.clean({
     excludeList: ignore || [],
+    noDelete: list,
   })
 }
 
