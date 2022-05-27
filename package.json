@@ -1,15 +1,16 @@
 {
   "name": "module-kit",
-  "version": "0.0.1",
+  "version": "0.1.0-rc.0",
   "description": "",
   "private": false,
+  "main": "index",
   "bin": {
-    "module-kit-clean": "./clean.js"
+    "module-kit-clean": "bin/cmd.js"
   },
   "scripts": {
-    "123prepack": "npx tsc --noEmit false",
-    "123postpublish": "npm run clean",
-    "123clean": "ts-node ../../scripts/clean.ts"
+    "prepack": "npx tsc --noEmit false",
+    "postpublish": "npm run clean",
+    "clean": "bin/cmd.js --exclude ./bin/cmd.js"
   },
   "keywords": [
     "typescript",
@@ -26,6 +27,11 @@
     "url": "https://github.com/zvs001/module-kit"
   },
   "dependencies": {
-    "del": "^5.1.0"
+    "del": "^6.1.1",
+    "globby": "^11.1.0",
+    "yargs": "^17.5.1"
+  },
+  "devDependencies": {
+    "ts-node": "^10.4.0"
   }
 }

@@ -6,6 +6,19 @@ Lib provides utils for typescript modules
 
 Important: typescript only for now
 
+### Commands
+
+### module-kit-clean
+
+```
+module-kit-clean --help
+```
+
+Remove files, excluding `index.js` and `cmd.js`
+```
+module-kit-clean --exclude index.js cmd.js
+```
+
 ### Configs
 Add scripts to your library `package.json`:
 
@@ -15,7 +28,7 @@ Add scripts to your library `package.json`:
     "prepack": "npx tsc --noEmit false",
     "postpublish": "npm run clean",
     "clean": "npx module-kit-clean"
-  },
+  }
 }
 ``` 
 

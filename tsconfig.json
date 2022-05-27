@@ -6,7 +6,7 @@
     "noEmit": true,
     "module": "CommonJS",
     "target": "ES2015",
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "lib": ["esnext", "es2018"],
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
